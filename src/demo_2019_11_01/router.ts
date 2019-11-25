@@ -23,6 +23,11 @@ export default new Router({
       path: '/innerView',
       name: 'innerView',
       component: () => import(/* webpackChunkName: "innerView" */ './views/InnerView.vue')
+    },
+    {
+      path: '/demo-one',
+      name: 'demo-one',
+      component: () => import(/* webpackChunkName: "about" */ './views/DemoOne/index.vue')
     }
   ]
 })
