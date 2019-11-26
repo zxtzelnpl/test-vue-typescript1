@@ -10,17 +10,20 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'home',
-  mounted() {
-      let iframe = document.getElementById('myIframe');
-      iframe.onload = function() {
-        let document = iframe.contentWindow.document;
-        console.log(document);
-        let nav = document.getElementById('nav');
-        nav.style="color:red";
-        let as = nav.querySelectorAll('a');
-        console.log(as)
-        as[1].click()
-      }
+  mounted () {
+    let iframe = document.getElementById('myIframe')
+    // if (iframe) {
+    //   iframe.onload = function () {
+    //     if (iframe === null) return
+    //     let document = iframe.contentWindow.document // eslint-disable-line
+    //     console.log(document)
+    //     let nav = document.getElementById('nav')
+    //     nav.style = 'color:red'
+    //     let as = nav.querySelectorAll('a')
+    //     console.log(as)
+    //     as[1].click()
+    //   }
+    // }
   }
 })
 </script>
