@@ -1,5 +1,5 @@
-import { ActionContext } from 'vuex';
-import { IRootState } from './index';
+import { ActionContext } from 'vuex'
+import { IRootState } from './index'
 
 interface IUser {
   id: number;
@@ -43,19 +43,19 @@ export default {
     }
   },
   mutations: {
-    list(state: IUserState, { list }:IUserMutationPayload ) {
+    list (state: IUserState, { list }:IUserMutationPayload) {
       state.list = list
     },
-    select(state: IUserState, { select }:IUserMutationPayload) {
-      state.select = select;
+    select (state: IUserState, { select }:IUserMutationPayload) {
+      state.select = select
     }
   },
   actions: {
-    init({ commit }: ActionContext<IUserState, IRootState>) {
-      commit('list', { list: LIST });
+    init ({ commit }: ActionContext<IUserState, IRootState>) {
+      commit('list', { list: LIST })
 
       const select = LIST[0]
-      commit('select', { select });
+      commit('select', { select })
     }
   }
 }
