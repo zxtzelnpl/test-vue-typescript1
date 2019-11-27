@@ -46,7 +46,7 @@ export default {
   mounted () {
     setTimeout(() => {
       this.$store.dispatch('user/init')
-    }, 2000)
+    }, 5000)
   }
 }
 </script>

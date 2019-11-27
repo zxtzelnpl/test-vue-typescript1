@@ -11,17 +11,22 @@
 export default {
   name: 'discount-info',
   props: ['msg', 'user'],
+  data () {
+    return {
+      visible: typeof this.user.id === 'number'
+    }
+  },
   update () {
     console.log(this)
-  },
-  computed: {
-    visible () {
-      if (typeof this.user.id === 'number') {
-        return true
-      } else {
-        return false
-      }
-    }
   }
+  // computed: {
+  //   visible () {
+  //     if (typeof this.user.id === 'number') {
+  //       return true
+  //     } else {
+  //       return false
+  //     }
+  //   }
+  // }
 }
 </script>
