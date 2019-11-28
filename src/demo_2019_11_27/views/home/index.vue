@@ -7,7 +7,8 @@
         {{JSON.stringify(user)}}
       </span>
     </div>
-    <UserId :user="user"/>
+    <UserIdInArray v-for="user in list" :key="user.id" :user="user" />
+    <!-- <UserId :user="user"/> -->
     <!-- <DiscountInfo
       msg="Welcome to Your Vue.js App"
       :user="user"
@@ -18,13 +19,15 @@
 
 <script>
 // import DiscountInfo from './components/discount-info.vue'
-import UserId from './components/user-id'
+// import UserId from './components/user-id'
+import UserIdInArray from './components/user-id-in-array'
 
 export default {
   name: 'home',
   components: {
     // DiscountInfo
-    UserId
+    // UserId
+    UserIdInArray
   },
   // data () {
   //   return {
@@ -43,14 +46,20 @@ export default {
   //   }
   // }
   computed: {
+    list () {
+      return this.$store.state.user.list
+    },
     user () {
       return this.$store.state.user.select
     }
   },
   mounted () {
     setTimeout(() => {
-      this.$store.dispatch('user/change', 5)
+      this.$store.dispatch('user/init')
     }, 5000)
+    setTimeout(() => {
+      this.$store.dispatch('user/changeLastOneInList')
+    }, 10000)
   }
 }
 </script>

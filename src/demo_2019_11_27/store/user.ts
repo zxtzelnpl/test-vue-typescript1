@@ -51,6 +51,9 @@ export default {
     },
     change (state: IUserState, id: number) {
       state.select.id = id
+    },
+    changeLastOneInList (state: IUserState) {
+      state.list[0].name = 'name2+222'
     }
   },
   actions: {
@@ -62,6 +65,9 @@ export default {
     },
     change ({ commit }: ActionContext<IUserState, IRootState>, id: number) {
       commit('change', id)
+    },
+    changeLastOneInList ({ commit }: ActionContext<IUserState, IRootState>) {
+      commit('changeLastOneInList')
     }
   }
 }
