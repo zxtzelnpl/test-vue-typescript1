@@ -7,20 +7,24 @@
         {{JSON.stringify(user)}}
       </span>
     </div>
-    <DiscountInfo
+    <UserId :user="user"/>
+    <!-- <DiscountInfo
       msg="Welcome to Your Vue.js App"
       :user="user"
-    />
+    /> -->
+
   </div>
 </template>
 
 <script>
-import DiscountInfo from './components/discount-info.vue'
+// import DiscountInfo from './components/discount-info.vue'
+import UserId from './components/user-id'
 
 export default {
   name: 'home',
   components: {
-    DiscountInfo
+    // DiscountInfo
+    UserId
   },
   // data () {
   //   return {
@@ -45,7 +49,7 @@ export default {
   },
   mounted () {
     setTimeout(() => {
-      this.$store.dispatch('user/init')
+      this.$store.dispatch('user/change', 5)
     }, 5000)
   }
 }

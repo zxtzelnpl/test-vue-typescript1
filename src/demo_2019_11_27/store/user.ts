@@ -48,6 +48,9 @@ export default {
     },
     select (state: IUserState, { select }:IUserMutationPayload) {
       state.select = select
+    },
+    change (state: IUserState, id: number) {
+      state.select.id = id
     }
   },
   actions: {
@@ -56,6 +59,9 @@ export default {
 
       const select = LIST[0]
       commit('select', { select })
+    },
+    change ({ commit }: ActionContext<IUserState, IRootState>, id: number) {
+      commit('change', id)
     }
   }
 }
