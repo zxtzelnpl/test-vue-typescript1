@@ -1,8 +1,19 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/async-demo">async-demo</router-link> |
-    </div>
+    <p id="nav">
+      <span v-for="menu in menus" :key="menu.name"><router-link :to="menu.path">{{menu.name}}</router-link> |</span>
+    </p>
     <router-view/>
   </div>
 </template>
+
+<script>
+import { menus } from './router';
+export default {
+  data() {
+    return {
+      menus
+    }
+  }
+}
+</script>
