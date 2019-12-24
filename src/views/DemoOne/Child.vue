@@ -13,7 +13,7 @@ export default Vue.extend({
     message: String
   },
   updated () {
-    console.log('demo-one-child');
+    console.log('demo-one-child')
   }
 })
 </script>

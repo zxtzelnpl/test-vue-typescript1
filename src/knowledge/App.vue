@@ -7,19 +7,13 @@
   </div>
 </template>
 
-<<<<<<< HEAD
-<style lang="scss">
-
-</style>
-=======
 <script>
-import { menus } from './router';
+import { menus } from './router'
 export default {
-  data() {
+  data () {
     return {
       menus
     }
   }
 }
 </script>
->>>>>>> 70c38f96026b317816769fea836ff10cabbb131e
