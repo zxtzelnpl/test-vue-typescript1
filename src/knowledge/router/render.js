@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const template = (routes) => (`
+const template = (routes) => (`/*eslint-disable*/
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
@@ -37,13 +37,15 @@ fs.readdir(filePath, (error, files) => {
   console.log(files)
   const routes = files.map(file => (
     `
-    {
-      path: '/${file}-demo',
-      name: '${file}-demo',
-      component: () => import(/* webpackChunkName: "${file}" */ '../views/${file}/index.vue')
-    }
-    `
-  )).join('')
-  const router = template(routes)
-  console.log(router)
+  {
+    path: '/${file}-demo',
+    name: '${file}-demo',
+    component: () => import(/* webpackChunkName: "${file}" */ '../views/${file}/index.vue')
+  }`
+  )).join(',')
+  const routerContent = template(routes)
+  const routerPath = path.resolve('./src/knowledge/router/index.ts')
+  fs.writeFile(routerPath, routerContent, (err) => {
+    if (err) { console.log(err) } else { console.log('文件已保存') }
+  })
 })
