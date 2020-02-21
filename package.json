@@ -6,11 +6,12 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "render": "node ./src/knowledge/router/render.js"
+    "render-routes": "node ./src/knowledge/router/render.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
     "lodash": "^4.17.15",
+    "velocity": "^0.7.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"

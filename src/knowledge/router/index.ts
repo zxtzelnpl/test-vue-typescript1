@@ -32,6 +32,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "props" */ '../views/props/index.vue')
   },
   {
+    path: '/PropsAndOn-demo',
+    name: 'PropsAndOn-demo',
+    component: () => import(/* webpackChunkName: "PropsAndOn" */ '../views/PropsAndOn/index.vue')
+  },
+  {
     path: '/slot-demo',
     name: 'slot-demo',
     component: () => import(/* webpackChunkName: "slot" */ '../views/slot/index.vue')
