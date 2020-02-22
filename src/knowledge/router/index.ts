@@ -12,6 +12,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "async" */ '../views/async/index.vue')
   },
   {
+    path: '/asyncComponent-demo',
+    name: 'asyncComponent-demo',
+    component: () => import(/* webpackChunkName: "asyncComponent" */ '../views/asyncComponent/index.vue')
+  },
+  {
     path: '/depTest-demo',
     name: 'depTest-demo',
     component: () => import(/* webpackChunkName: "depTest" */ '../views/depTest/index.vue')
