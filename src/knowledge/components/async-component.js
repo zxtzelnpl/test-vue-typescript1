@@ -2,9 +2,9 @@
 import LoadingComponent from './loading'
 import ErrorComponent from './error'
 
-const AsyncComponent = (url) => ({
+const AsyncComponent = () => ({
   // 需要加载的组件 (应该是一个 `Promise` 对象)
-  component: import(/* webpackChunkName: "my-component" */url),
+  component: import(/* webpackChunkName: "show-pdf" */'./show-pdf.vue'),
   // 异步组件加载时使用的组件
   loading: LoadingComponent,
   // 加载失败时使用的组件
