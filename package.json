@@ -11,11 +11,8 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "lodash": "^4.17.15",
-<<<<<<< HEAD
     "vant": "^2.4.2-beta.2",
-=======
     "velocity": "^0.7.2",
->>>>>>> 562850f3e98d5b775f255e168ce650a162a5bff4
     "vue": "^2.6.10",
     "vue-pdf": "^4.0.8",
     "vue-router": "^3.0.3",
