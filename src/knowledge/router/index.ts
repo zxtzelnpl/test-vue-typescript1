@@ -12,6 +12,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "async" */ '../views/async/index.vue')
   },
   {
+    path: '/asyncComponent-demo',
+    name: 'asyncComponent-demo',
+    component: () => import(/* webpackChunkName: "asyncComponent" */ '../views/asyncComponent/index.vue')
+  },
+  {
     path: '/depTest-demo',
     name: 'depTest-demo',
     component: () => import(/* webpackChunkName: "depTest" */ '../views/depTest/index.vue')
@@ -30,6 +35,11 @@ const routes = [
     path: '/props-demo',
     name: 'props-demo',
     component: () => import(/* webpackChunkName: "props" */ '../views/props/index.vue')
+  },
+  {
+    path: '/PropsAndOn-demo',
+    name: 'PropsAndOn-demo',
+    component: () => import(/* webpackChunkName: "PropsAndOn" */ '../views/PropsAndOn/index.vue')
   },
   {
     path: '/slot-demo',

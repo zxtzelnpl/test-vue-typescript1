@@ -6,13 +6,18 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "render": "node ./src/knowledge/router/render.js"
+    "render-routes": "node ./src/knowledge/router/render.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
     "lodash": "^4.17.15",
+<<<<<<< HEAD
     "vant": "^2.4.2-beta.2",
+=======
+    "velocity": "^0.7.2",
+>>>>>>> 562850f3e98d5b775f255e168ce650a162a5bff4
     "vue": "^2.6.10",
+    "vue-pdf": "^4.0.8",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
