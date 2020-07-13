@@ -3,7 +3,7 @@
     <p id="nav">
       <span v-for="menu in menus" :key="menu.name"><router-link :to="menu.path">{{menu.name}}</router-link> |</span>
     </p>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 

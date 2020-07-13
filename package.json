@@ -9,6 +9,7 @@
     "render-routes": "node ./src/knowledge/router/render.js"
   },
   "dependencies": {
+    "@nutui/nutui": "^2.2.7",
     "core-js": "^2.6.5",
     "lodash": "^4.17.15",
     "vant": "^2.4.2-beta.2",
