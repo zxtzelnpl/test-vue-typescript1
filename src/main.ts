@@ -1,1 +1,1 @@
-import './knowledge/main'
+import './keys/main'

@@ -6,33 +6,54 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "render-routes": "node ./src/knowledge/router/render.js"
+    "render-routes": "node ./src/knowledge/router/render.js",
+    "test": "jest"
   },
   "dependencies": {
     "@nutui/nutui": "^2.2.7",
-    "core-js": "^2.6.5",
-    "lodash": "^4.17.15",
-    "vant": "^2.4.2-beta.2",
+    "core-js": "^2.6.11",
+    "lodash": "^4.17.19",
+    "vant": "^2.9.1",
     "velocity": "^0.7.2",
-    "vue": "^2.6.10",
-    "vue-pdf": "^4.0.8",
-    "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
+    "vue": "^2.6.11",
+    "vue-pdf": "^4.1.0",
+    "vue-router": "^3.3.4",
+    "vuex": "^3.5.1"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.149",
-    "@vue/cli-plugin-babel": "^3.11.0",
-    "@vue/cli-plugin-eslint": "^3.11.0",
-    "@vue/cli-plugin-typescript": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@types/lodash": "^4.14.157",
+    "@vue/cli-plugin-babel": "^3.12.1",
+    "@vue/cli-plugin-eslint": "^3.12.1",
+    "@vue/cli-plugin-typescript": "^3.12.1",
+    "@vue/cli-service": "^3.12.1",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/eslint-config-typescript": "^4.0.0",
-    "babel-eslint": "^10.0.1",
+    "@vue/test-utils": "^1.0.3",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.9.0",
+    "jest": "^26.1.0",
+    "node-sass": "^4.14.1",
     "sass-loader": "^7.1.0",
-    "typescript": "^3.4.3",
-    "vue-template-compiler": "^2.6.10"
+    "typescript": "^3.9.6",
+    "vue-jest": "^3.0.6",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "vue-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
   }
 }
