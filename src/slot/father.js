@@ -5,18 +5,26 @@ function getComponentName (opts) {
 
 export default {
   name: 'father',
-  abstract: true,
+  // abstract: true,
+  data () {
+    return {
+      fatherName: '夸父'
+    }
+  },
   render () {
-    const slot = this.$slots.default
-    const vNode = slot[1]
-    const componentOptions = vNode.componentOptions
-    const name = getComponentName(componentOptions)
-    console.log(slot)
-    console.log(name)
+    console.log(this)
+    // const vNode = slot[1]
+    // const componentOptions = vNode.componentOptions
+    // const name = getComponentName(componentOptions)
+    // console.log(slot)
+    // console.log(name)
 
     return (
       <div>
         father
+        {this.$scopedSlots.before('first', 'second', 'third', 'forth', 'fifth')}
+        {this.$scopedSlots.default({ fatherName: '2' })}
+        {this.$scopedSlots.after('first', 'second', 'third', 'forth', 'fifth')}
       </div>
     )
   }

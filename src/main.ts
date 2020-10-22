@@ -1,2 +1,1 @@
-import './keepAliveDemo/main'
-// import './slot/main'
+import './slot/main'
