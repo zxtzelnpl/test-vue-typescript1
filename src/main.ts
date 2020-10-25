@@ -1,1 +1,1 @@
-import './slot/main'
+import './requireContext3/main.js'

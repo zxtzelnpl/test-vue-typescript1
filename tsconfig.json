@@ -30,7 +30,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx", "src/knowledge/views/async-component/async-component.js", "src/keys/main.js", "src/slot/father.js"
+    "tests/**/*.tsx", "src/knowledge/views/async-component/async-component.js", "src/keys/main.js", "src/slot/father.js", "src/requireContext3/main.js", "src/requireContext3/router/index.js"
   ],
   "exclude": [
     "node_modules"
