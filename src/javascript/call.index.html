@@ -1,0 +1,55 @@
+/* eslint-disable no-extend-native */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+/* eslint-ignore */
+const callPolyfill = () => {
+  if (typeof Function.prototype.mcall !== 'function') {
+    Function.prototype.mcall = function () {
+      const context = arguments[0] ? arguments[0] : window
+      const id = String(new Date().getTime())
+      context[id] = this
+
+      const restArgs = []
+      for (let i = 1, len = arguments.length; i < len; i++) {
+        restArgs.push(arguments[i])
+      }
+      const str = `return context[id](${restArgs.join(',')})`
+      const fn = new Function('context', 'id', str)
+      const result = fn(context, id)
+
+      delete context[id]
+      return result
+    }
+  }
+}
+callPolyfill()
+
+function a(x) {
+  console.log(this.y)
+  console.log(x)
+  console.log(this.y + x)
+}
+
+const obj1 = {
+  y: 'y',
+  a:a
+}
+const obj2 = {
+  y: 1
+}
+
+
+obj1.a('x')
+a.call(obj2, 1)
+a.mcall(obj2, 1)
+</script>

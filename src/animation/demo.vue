@@ -1,13 +1,12 @@
 <template>
   <div id="demo">
     <button v-on:click="show = !show">
-      Toggle
+      Toggle:: ({{ show ? 'entering' : 'leaving'}})
     </button>
     <transition
-      enter-active-class="enter-active-class"
-      leave-active-class="leave-active-class"
+      name="fade"
     >
-      <p v-if="show">hello</p>
+      <p v-show="show">hello</p>
     </transition>
   </div>
 </template>
@@ -24,31 +23,33 @@ export default {
 
 <style lang="less" scoped>
 #demo{
-  padding-left: 100px;
+  padding-left: 300px;
 }
 </style>
 
 <style lang="less" scoped>
 // fade transition
 .fade-enter-active {
-  transition: all .5s ease;
+  transition: all 15s;
 }
 .fade-leave-active {
-  transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 15s;
 }
 .fade-enter {
   opacity: 0;
-  transform: translateX(2px) scale(6);
+  transform: translateX(200px);
 }
-.fade-enter-to {
-
-}
-.fade-leave {
-
-}
+// .fade-enter-to {
+//   opacity: 1;
+//   transform: translateX(0);
+// }
+// .fade-leave {
+//   opacity: 1;
+//   transform: translateX(0);
+// }
 .fade-leave-to {
   opacity: 0;
-  transform: translateX(2px) scale(6);
+  transform: translateX(200px);
 }
 </style>
 
